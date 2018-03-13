@@ -1,0 +1,30 @@
+package scala99.problems
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+import org.scalatest.FunSuite
+
+import scala99.problems.Problem3.findKthElementOfList
+
+/**
+  * Created by prashant on 13/03/18.
+  */
+@RunWith(classOf[JUnitRunner])
+class Problem6Suite extends FunSuite{
+  import Problem6.isPalindrome;
+
+  test("Palindrome list should return true"){
+    assert(isPalindrome(List(1,2,1)) === true)
+  }
+
+  test("Non palindrome list should return true"){
+    assert(isPalindrome(List(1,2,3)) === false)
+  }
+
+  test("An Empty list should throw an exception"){
+    assertThrows[UnsupportedOperationException]{
+      isPalindrome(List())
+    }
+  }
+
+}
