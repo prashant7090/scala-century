@@ -4,8 +4,6 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 
-import scala99.problems.Problem3.findKthElementOfList
-
 /**
   * Created by prashant on 15/03/18.
   */

@@ -19,7 +19,7 @@ object Problem7 {
         case head: List[_] => flatten(head)
         case e => List(e)
       }
-}
+    }
 
   def main(args: Array[String]): Unit = {
       println("Flatten: " + flatten(List(List(1,2),4,List(5,6))))
