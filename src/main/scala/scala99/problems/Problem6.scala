@@ -15,10 +15,9 @@ object Problem6 {
 
   def isPalindrome(list: List[Int]): Boolean = {
 
-    if(list.isEmpty){
-      println("isEMpty: " + list.isEmpty)
+    if(list.isEmpty)
       throw new UnsupportedOperationException("List is empty!")
-    }
+
     def loop(list: List[Int]): Boolean={
       list match {
         case Nil => true
