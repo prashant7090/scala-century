@@ -16,25 +16,15 @@ package scala99.problems
 
 object Problem19{
 
-  def rotate(nthRotate:Int, input:List[Char]):List[Any] = {
-    if(nthRotate == 0)
-      return input
-
-    def loop(nthRotate:Int, input:List[Char],index:Int,output:List[Char]):List[Any] = {
-        input match {
-          case x::xs if(index < nthRotate && nthRotate > 0) => loop(nthRotate,xs,index+1,output:+x)
-          case x::xs if(nthRotate !=index && nthRotate < 0) => loop(nthRotate,input dropRight(1),index-1,xs.last+:output)
-          case _ if(nthRotate>0) =>  input:::output
-          case _ if(nthRotate<0) => output:::input
-          case _  => output:::input
-        }
-    }
-    loop(nthRotate,input,0,List())
+  def rotate(nth: Int,input: List[Char]): List[Char] = input match {
+    case Nil => input
+    case _ if(nth == 0) => input
+    case _ if(nth < 0 ) => rotate(nth+1, input.last::input.init)
+    case _ if(nth > 0)  => rotate(nth-1, input.tail:+ input.head )
   }
 
   def main(args: Array[String]): Unit = {
-    println(rotate(10,List('a','b','c', 'd', 'e', 'f', 'g','h','i','j','k')))
+    println(rotate(12,List('a','b','c', 'd', 'e', 'f', 'g','h','i','j','k')))
   }
-
 
 }
