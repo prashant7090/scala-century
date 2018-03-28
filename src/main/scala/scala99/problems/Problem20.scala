@@ -16,7 +16,7 @@ package scala99.problems
 object Problem20{
 
 
-  def removeAt(nth: Int,input: List[Char]): (List[Char],Any) = {
+  def removeAt(nth: Int,input: List[Any]): (List[Any],Any) = {
     if(nth < 0 || nth > input.length)
       (input,None)
     else{

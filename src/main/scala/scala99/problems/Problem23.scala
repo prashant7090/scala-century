@@ -19,7 +19,7 @@ object Problem23{
 
     import Problem20.removeAt;
 
-    def randomSelect(nth:Int, input:List[Char]): List[Any] = {
+    def randomSelect(nth:Int, input:List[Any]): List[Any] = {
       val total = if(nth > input.length) input.length else nth
       def loop(nth: Int, output: List[Any]):List[Any] = {
 
